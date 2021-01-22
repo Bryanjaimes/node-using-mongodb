@@ -1,25 +1,28 @@
 import mongoose from 'mongoose';
+import { INTEGER } from 'sequelize/types';
 
 const Schema = mongoose.Schema;
 
-export const ProductSchema = new Schema({
-    name: {
+export const BookSchema = new Schema({
+    title: {
         type: String,
-        required: 'Enter a product name'
+        required: 'Enter a book title'
     },
-    description: {
+    author: {
         type: String,
-        required: 'Enter a description'
+        required: 'Enter author name(s)'
     },
-    category: {
-        type: String
+    year_of_publication: {
+        type: String,
+        required: 'Enter year of publication'
     },
-    price: {
-        type: Number
+    ISBN: {
+        type: String,
+        required: 'Enter ISBN'
     },
-    created_date: {
-        type: Date,
-        default: Date.now
+    number_of_copies: {
+        type: INTEGER,
+        required: 'Enter number of copies'
     }
 });
 

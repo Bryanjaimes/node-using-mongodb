@@ -1,16 +1,16 @@
-import { addnewProduct, getProducts, getProductWithID, updateProduct, deleteProduct } from '../controllers/controllers';
+import { addnewBook, getBooks, deleteBook, updateBook, getBookWithID } from '../controllers/controllers';
 
 const routes = (app) => {
-    app.route('/products')
+    app.route('/books')
 
-    .get(getProducts)
-    .post(addnewProduct);
+    .get(getBooks)
+    .post(addnewBook);
 
-    app.route('/products/:ProductID')
+    app.route('/books/:BookID')
 
-    .get(getProductWithID)
-    .put(updateProduct)
-    .delete(deleteProduct);
+    .get(getBookWithID)
+    .put(updateBook)
+    .delete(deleteBook);
 }
 
 export default routes;

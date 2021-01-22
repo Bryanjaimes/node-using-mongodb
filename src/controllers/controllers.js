@@ -1,52 +1,52 @@
 import mongoose from 'mongoose';
-import { ProductSchema } from '../models/models';
+import { BookSchema } from '../models/models';
 
-const Product = mongoose.model('Product', ProductSchema);
+const Book = mongoose.model('Book', BookSchema);
 
-export const addnewProduct = (req, res) => {
-    let newProduct = new Product(req.body);
+export const addnewBook = (req, res) => {
+    let newBook = new Book(req.body);
 
-    newProduct.save((err, Product) => {
+    newBook.save((err, Book) => {
         if (err) {
             res.send(err);
         }
-        res.json(Product);
+        res.json(Book);
     });
 }
 
-export const getProducts = (req, res) => {
-    Product.find({}, (err, Product) => {
+export const getBooks = (req, res) => {
+    Book.find({}, (err, Book) => {
         if (err) {
             res.send(err);
         }
 
-        res.json(Product);
+        res.json(Book);
     });
 }
 
-export const getProductWithID = (req, res) => {
-    Product.findById(req.params.ProductID, (err, Product) => {
+export const getBookWithID = (req, res) => {
+    Book.findById(req.params.BookID, (err, Book) => {
         if (err) {
             res.send(err);
         }
-        res.json(Product);
+        res.json(Book);
     });
 }
 
-export const updateProduct = (req, res) => {
-    Product.findOneAndUpdate({ _id: req.params.ProductID }, req.body, { new: true, useFindAndModify: false }, (err, Product) => {
+export const updateBook = (req, res) => {
+    Book.findOneAndUpdate({ _id: req.params.BookID }, req.body, { new: true, useFindAndModify: false }, (err, Book) => {
         if (err){
             res.send(err)
         }
-        res.json(Product);
+        res.json(Book);
     });
 }
 
-export const deleteProduct = (req, res) => {
-    Product.deleteOne({ _id: req.params.ProductID}, (err, Product) => {
+export const deleteBook = (req, res) => {
+    Book.deleteOne({ _id: req.params.ProductID}, (err, Book) => {
         if (err){
             res.send(err)
         }
-        res.json({ message: 'successfully deleted product' });
+        res.json({ message: 'successfully deleted book' });
     })
 }

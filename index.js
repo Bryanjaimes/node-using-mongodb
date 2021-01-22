@@ -8,7 +8,7 @@ const PORT = 4000;
 
 // connection to mongoose
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/productsdb', {
+mongoose.connect('mongodb://localhost/booksdb', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
