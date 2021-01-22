@@ -25,7 +25,7 @@ export const getProducts = (req, res) => {
 }
 
 export const getProductWithID = (req, res) => {
-    Product.findById(req.params.ProductID, (req, err) => {
+    Product.findById(req.params.ProductID, (err, Product) => {
         if (err) {
             res.send(err);
         }
