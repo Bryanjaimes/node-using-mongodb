@@ -4,7 +4,7 @@ const routes = (app) => {
     app.route('/products')
 
     // Post endpoint
-    .post(addNewProduct);
+    .post(addnewProduct);
 }
 
 export default routes;
